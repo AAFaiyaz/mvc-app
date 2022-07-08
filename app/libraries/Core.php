@@ -56,10 +56,10 @@ class Core
 
     public function getUrl()
     {
-        if(isset($_GET['url']))
+        if(isset($_GET['url'])) //key name is "url" cause we set in the .htaccess file index.php?url=$1
         {
             $url = rtrim($_GET['url'], '/'); // rtrim is removing the last /  eg. /posts/extra/ 
-            $url = filter_var($url, FILTER_SANITIZE_URL); //should not any character hat url should not have
+            $url = filter_var($url, FILTER_SANITIZE_URL); // should not have any character that url should not have
             $url = explode('/', $url); // put the url into an array 
             return $url;
         }
